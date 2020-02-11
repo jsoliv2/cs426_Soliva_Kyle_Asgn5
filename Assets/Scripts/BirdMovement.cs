@@ -58,11 +58,6 @@ public class BirdMovement : NetworkBehaviour
         currentStamina = maxStamina;
     }
 
-    public override void OnStartLocalPlayer()
-    {
-        GetComponent<MeshRenderer>().material.color = Color.red;
-    }
-
     void Update()
     {
         if(!isLocalPlayer)

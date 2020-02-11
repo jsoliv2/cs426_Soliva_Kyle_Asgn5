@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 8746199805246495671}
   m_Layer: 0
   m_Name: PC Case
-  m_TagString: Untagged
+  m_TagString: objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
