@@ -137,14 +137,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 1411850228375652551}
-  maxMidairSpeedFlaps: 15
-  baseMoveSpeed: 4
+  maxMidairSpeedFlaps: 18
+  baseMoveSpeed: 6
   backwardMovePenalty: 0.5
   midairMoveSpeedPortion: 0.35
   momentumDecayMod: 0.95
   rotationSpeed: 1
   jumpSpeed: 2
-  midairJumpMod: 2.5
+  midairJumpMod: 4.5
   gravity: 15
   gravityMod: 0.075
   staminaText: {fileID: 3500843476819322979}
