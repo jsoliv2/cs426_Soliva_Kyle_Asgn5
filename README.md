@@ -7,9 +7,11 @@ Intelligent birds known as “birdbrains” find PC parts scattered around the f
 <p>The procedure of our game is strictly limited only to the forest and players cannot leave; the forest is bounded by walls. The bird can fly; however, the bird has a stamina bar located on the top right corner of the screen. Our game is recommending 2-4 players. They have a limited amount of time to gather and find all the computer objects. The players can only hold one object at a time and must return the object back to the nest located at their spawn location. Once all the parts are returned to the nest before the time ends (with the help of each player in game), the players win. Otherwise, they lose and could restart the game.</p>
 
 The movements of the bird consist of:
+<p>
 •	Bird Movement
-o	Keyboard
-	WASD
+<body>
+Keyboard
+WASD
 •	W = Forward
 •	A  = Left
 •	S  = Back
@@ -20,8 +22,8 @@ o	Spacebar
 	Holding the spacebar allows the bird to fly.
 •	Collecting computer parts
 o	Collide with computer part by moving towards it then return to the nest.
-
-
+</body>
+</p>
 
 
 
