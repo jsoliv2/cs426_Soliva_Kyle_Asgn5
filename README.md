@@ -10,18 +10,20 @@ The movements of the bird consist of:
 <p>
 •	Bird Movement
 <body>
-Keyboard
 WASD
 •	W = Forward
 •	A  = Left
 •	S  = Back
 •	D = Right
-o	Mouse
-	Rotates camera
-o	Spacebar
-	Holding the spacebar allows the bird to fly.
-•	Collecting computer parts
-o	Collide with computer part by moving towards it then return to the nest.
+</br>
+<b>Mouse</b>
+Rotates camera
+</br>
+<b>Spacebar</b>
+Holding the spacebar allows the bird to fly.
+</br>
+<b>Collecting computer parts</b>
+Collide with computer part by moving towards it then return to the nest.
 </body>
 </p>
 
