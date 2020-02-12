@@ -11,17 +11,16 @@ The movements of the bird consist of:
 <body>
 <b>Bird Movement</b>
 WASD
-•	W = Forward
-•	A  = Left
-•	S  = Back
-•	D = Right
-</br>
-<b>Mouse</b>
-Rotates camera
-</br>
+•	W = Forward (While hopping or flying)
+•	A  = Rotate Left (Only in midair)
+•	S  = Back (Only while flying)
+•	D = Rotate Right (Only in midair)
+
 <b>Spacebar</b>
-Holding the spacebar allows the bird to fly.
 </br>
+Press while on the ground to hop. Press again while in midair to flap your wings. Hold down while flying to fall slowly.
+</br>
+
 <b>Collecting computer parts</b>
 Collide with computer part by moving towards it then return to the nest.
 </body>
@@ -38,6 +37,11 @@ Additional Resources:
 <li>Rocks: https://assetstore.unity.com/packages/3d/props/exterior/rock-and-boulders-2-6947</li>
 <li>Birds: https://assetstore.unity.com/packages/3d/props/3d-birds-prototype-pack-150502</li>
 
+<li>Processor: https://www.turbosquid.com/3d-models/free-obj-mode-intel/965753?referral=3dmdb</li>
+<li>RAM: https://www.turbosquid.com/3d-models/free-computer-rams-3d-model/552442?referral=3dmdb</li>
+<li>Hard Drive: https://www.turbosquid.com/3d-models/3d-computer-hard-drive-1332637?referral=3dmdb</li>
+<li>Motherboard: https://www.turbosquid.com/3D-Models/free-motherboard-3d-model/203836?referral=3dmdb</li>
+<li>Power Supply: https://www.turbosquid.com/3D-Models/free-3ds-mode-power-supply-unit-components/396714?referral=3dmdb</li>
 
 <li>Keyboard: https://assetstore.unity.com/packages/3d/props/electronics/keyboard-adjustable-colors-154305</li>
 <li>Books: https://assetstore.unity.com/packages/3d/props/interior/books-pack-5484</li>

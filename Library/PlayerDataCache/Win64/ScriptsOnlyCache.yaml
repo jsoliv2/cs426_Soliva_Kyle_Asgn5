@@ -52,6 +52,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -97,7 +101,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11644}
     - Class: 114
-      Script: {instanceID: 21432}
+      Script: {instanceID: 28680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -670,5 +674,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Documents/cs426_Donayre_Justin_Asgn2/Output/PC Building for Bird
-    Brains.exe
+  playerPath: C:/Users/jkays/git/Asgn2/Output/PC Building for Bird Brains.exe
