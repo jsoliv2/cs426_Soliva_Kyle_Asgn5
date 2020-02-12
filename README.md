@@ -8,8 +8,8 @@ Intelligent birds known as “birdbrains” find PC parts scattered around the f
 
 The movements of the bird consist of:
 <p>
-•	Bird Movement
 <body>
+<b>Bird Movement</b>
 WASD
 •	W = Forward
 •	A  = Left
