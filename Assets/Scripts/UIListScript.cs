@@ -2,21 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class UIListScript : MonoBehaviour
-{
+public class UIListScript : NetworkBehaviour
+{   [SyncVar]
     private bool isChipCollected = false;
+    [SyncVar]
     private bool isHardDriveCollected = false;
+    [SyncVar]
     private bool isMotherboardCollected = false;
+    [SyncVar]
     private bool isPowerCollected = false;
+    [SyncVar]
     private bool isRamStickCollected = false;
 
     public Text todoList;
     public Text timeLeft;
+
+    [SyncVar]
     private int framesPerSecond = 60;
+    [SyncVar]
     private int frameCounter = 0;
+    [SyncVar]
     public int timeToBeat = 180;
 
+    [SyncVar]
     private bool isAWin = false;
 
     public void collectChip()
