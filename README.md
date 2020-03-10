@@ -1,3 +1,23 @@
+<b>ADDED COMPONENTS FOR ASGN 5</b>
+
+<b>Physics Constructs Used</b>
+I created "Worm Malware" enemies for the birds to fly into and attack. The worms use Rigidbody to add Force in the direction of the bird player to get knocked away when the player runs into them at a high enough speed. When the worms hit the barrier of the play area, they despawn and explode out birdseed that gets scattered using Rigidbody Force and Gravity.
+
+<b>Billboards</b>
+I used 5 2D bird assets--one near each PC part spawn location to mark each area a PC part can be found in.
+
+<b>Lights</b>
+The PC Parts now emit different colored point lights so that they are easier to spot from afar.
+
+<b>Sound</b>
+I added a jumping sound for the bird player's midair wing flaps which lowers in pitch the less stamina the player has left, a confirmation sound for bringing a PC part to the nest, and a sound for when enemy worms get knocked away. Background chirps now happen at random.
+
+Asset Store Sources:
+<li>Bird Billboards: https://assetstore.unity.com/packages/2d/characters/cute-birds-89649</li>
+<li>Sounds: https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116</li>
+
+<b>ASGN 2 README BELOW</b>
+
 <b>Executive Summary</b>
 In the 21st century, cute little birds create a PC in a huge forest. “PC Building for Bird Games” is a scavenger networking game, where all players are birds. They help collect computer parts to build a PC in a forest, this game is available in Windows targeted for children ages 6 to 14. 
 
@@ -47,3 +67,4 @@ Additional Resources:
 <li>Books: https://assetstore.unity.com/packages/3d/props/interior/books-pack-5484</li>
 <li>Clipboard: https://assetstore.unity.com/packages/3d/props/clipboard-137662</li>
 <li>Pencil: https://assetstore.unity.com/packages/3d/school-supplies-96667</li>
+
