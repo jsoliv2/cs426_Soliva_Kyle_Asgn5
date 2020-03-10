@@ -15,9 +15,12 @@ public class UIListScript : NetworkBehaviour
     private bool isPowerCollected = false;
     [SyncVar]
     private bool isRamStickCollected = false;
+    [SyncVar]
+    private int numEnemies;
 
     public Text todoList;
     public Text timeLeft;
+    public Text enemiesLeft;
 
     [SyncVar]
     private int framesPerSecond = 60;
@@ -105,27 +108,33 @@ public class UIListScript : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isChipCollected && isHardDriveCollected && isMotherboardCollected && isPowerCollected && isRamStickCollected)
+        numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+
+        if (isChipCollected && isHardDriveCollected && isMotherboardCollected && isPowerCollected && isRamStickCollected && numEnemies == 0 && timeToBeat > 0)
         {
-            if(timeToBeat > 0)
-            {
-                isAWin = true;
-                todoList.text = "YOU WIN!";
-            }
-            else
-            {
-                todoList.text = "You lost...";
-            }
+            isAWin = true;
+            todoList.text = "YOU WIN!";
+        }
+        else if(timeToBeat > 0)
+        {
+            displayList();
         }
         else
         {
-            displayList();
+            GameObject[] playersToStop = GameObject.FindGameObjectsWithTag("Player");
+            for(int i = 0; i < playersToStop.Length; ++i)
+            {
+                CharacterController cc = playersToStop[i].GetComponent<CharacterController>();
+                cc.enabled = false;
+            }
+
+            todoList.text = "You lost...";
         }
 
         if(!isAWin)
@@ -141,5 +150,7 @@ public class UIListScript : NetworkBehaviour
             }
             timeLeft.text = "TIME LEFT: " + timeToBeat;
         }
+
+        enemiesLeft.text = "WORMS LEFT: " + numEnemies;
     }
 }

@@ -5,12 +5,14 @@ using UnityEngine;
 public class ItemIdle : MonoBehaviour
 {
     private bool canRotate = true;
+    private Light spot;
 
     // Start is called before the first frame update
     Animation idleAnim;
     void Start()
     {
         idleAnim = GetComponent<Animation>();
+        spot = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class ItemIdle : MonoBehaviour
             canRotate = false;
             transform.parent = other.transform;
             Debug.Log("Player found " + this.gameObject.ToString());
+            spot.enabled = false;
         }
         else
         {

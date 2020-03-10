@@ -8,6 +8,7 @@ public class BirdMovement : NetworkBehaviour
 {
     private CharacterController chrCtrl;
     public Camera playerCam;
+    private AudioSource src;
 
     // Checks for controls
     private bool isJumpPressed = false;
@@ -41,6 +42,16 @@ public class BirdMovement : NetworkBehaviour
     public float gravity = 15.0f; // Base falling speed
     public float gravityMod = 0.5f; // Falling speed modifier while gliding
 
+    private float currentSpeed = 0.0f; // How fast the player is going
+    private float maxSpeed;
+
+    public float getSpeedPortion()
+    {
+        return (currentSpeed / maxSpeed) * 100.0f;
+    }
+
+    public Text speedText;
+
     // Stamina variables
     public Text staminaText;
 
@@ -53,9 +64,12 @@ public class BirdMovement : NetworkBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         chrCtrl = GetComponent<CharacterController>();
+        src = GetComponent<AudioSource>();
         midairMoveSpeedBonus = baseMoveSpeed * midairMoveSpeedPortion; // Calculate momentum bonus
         currentStamina = maxStamina;
+        maxSpeed = baseMoveSpeed + (baseMoveSpeed * midairMoveSpeedPortion * maxMidairSpeedFlaps);
     }
 
     void Update()
@@ -66,7 +80,10 @@ public class BirdMovement : NetworkBehaviour
             return;
         }
 
-        movePlayer();
+        if (chrCtrl.enabled)
+        {
+            movePlayer();
+        }
     }
 
     void movePlayer()
@@ -87,6 +104,7 @@ public class BirdMovement : NetworkBehaviour
             moveDirections.x = 0;
             moveDirections.z = 0;
             forwardDirections = Vector3.zero;
+            currentSpeed = 0.0f;
 
             // Grounded jump
             if (isJumpPressed && initialJump && !isBackwardPressed)
@@ -110,11 +128,25 @@ public class BirdMovement : NetworkBehaviour
             // Rotation controls
             if (isLeftPressed)
             {
-                transform.Rotate(0, -rotationSpeed, 0);
+                if(midairSpeedFlaps >= 1)
+                {
+                    transform.Rotate(0, -(rotationSpeed  + (midairSpeedFlaps * (rotationSpeed / maxMidairSpeedFlaps))), 0); // Faster turn speed on successive midair flaps
+                }
+                else
+                {
+                    transform.Rotate(0, -rotationSpeed, 0);
+                }
             }
             else if (isRightPressed)
             {
-                transform.Rotate(0, rotationSpeed, 0);
+                if(midairSpeedFlaps >= 1)
+                {
+                    transform.Rotate(0, rotationSpeed + (midairSpeedFlaps * (rotationSpeed / maxMidairSpeedFlaps)), 0);
+                }
+                else
+                {
+                    transform.Rotate(0, rotationSpeed, 0);
+                }
             }
             else
             {
@@ -124,6 +156,9 @@ public class BirdMovement : NetworkBehaviour
             // Jump / Flap controls
             if (currentStamina >= staminaFlapCost && isJumpPressed && !isJumpHeld)
             {
+                src.pitch = ((float)currentStamina + ((float)maxStamina / 2)) / (float)maxStamina;
+                src.Play();
+
                 initialJump = false;
                 if(midairSpeedFlaps < maxMidairSpeedFlaps)
                 {
@@ -150,18 +185,21 @@ public class BirdMovement : NetworkBehaviour
             // Forward Momentum
             if (isForwardPressed)
             {
-                forwardDirections = transform.TransformDirection(Vector3.forward) * (baseMoveSpeed + (midairMoveSpeedBonus * midairSpeedFlaps));
+                currentSpeed = (baseMoveSpeed + (midairMoveSpeedBonus * midairSpeedFlaps));
+                forwardDirections = transform.TransformDirection(Vector3.forward) * currentSpeed;
             }
             else
             {
                 midairSpeedFlaps = 0;
                 if (isBackwardPressed && !initialJump)
                 {
-                    forwardDirections = transform.TransformDirection(Vector3.back) * baseMoveSpeed * backwardMovePenalty;
+                    currentSpeed = baseMoveSpeed * backwardMovePenalty;
+                    forwardDirections = transform.TransformDirection(Vector3.back) * currentSpeed;
                 }
                 else
                 {
-                    forwardDirections *= momentumDecayMod;
+                    currentSpeed = momentumDecayMod;
+                    forwardDirections *= currentSpeed;
                 }
             }
 
@@ -171,6 +209,7 @@ public class BirdMovement : NetworkBehaviour
         }
 
         staminaText.text = "STAMINA: " + (currentStamina / 100) + "." + (currentStamina % 100) + "%";
+        speedText.text = "SPEED: " + currentSpeed + " / " + maxSpeed;
 
         //Debug.Log("Directions: " + moveDirections); // DEBUG
         chrCtrl.Move(moveDirections * Time.deltaTime); // Apply movement

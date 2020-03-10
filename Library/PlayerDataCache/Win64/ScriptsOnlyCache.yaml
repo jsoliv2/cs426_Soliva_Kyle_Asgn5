@@ -1,15 +1,21 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BillboardScript
     - BirdMovement
     - ItemIdle
     - NestGoal
     - ObjectSpawn
+    - RandomChirps
+    - TackleObject
     - UIListScript
     - UnityStandardAssets.Water.WaterBasic
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -71,37 +77,43 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9690}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 9866}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 9878}
+      Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 9956}
+      Script: {instanceID: 11446}
     - Class: 114
-      Script: {instanceID: 10032}
+      Script: {instanceID: 11522}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 11838}
     - Class: 114
-      Script: {instanceID: 10546}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 10630}
+      Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 11098}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 11184}
+      Script: {instanceID: 12568}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 11596}
+      Script: {instanceID: 12824}
     - Class: 114
-      Script: {instanceID: 11644}
+      Script: {instanceID: 13012}
     - Class: 114
-      Script: {instanceID: 28680}
+      Script: {instanceID: 13160}
+    - Class: 114
+      Script: {instanceID: 13176}
+    - Class: 114
+      Script: {instanceID: 13232}
+    - Class: 114
+      Script: {instanceID: 14746}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -115,6 +127,12 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 193
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -367,7 +385,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: c3cc2211fae9b22303e50ee10b056dde
+      Hash: b1786898b061d207e5f4d3d56aa13017
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIListScript
@@ -383,6 +401,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BillboardScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -487,6 +511,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 2887fce3151906ceac6cb9b5a5282fcd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TackleObject
+  - hash:
+      serializedVersion: 2
       Hash: 318c6c13a19c9fac98135ae14889de1b
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -517,7 +547,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 227fd2ff81fddbaf5e83ab2078b830ae
+      Hash: ea4f3e215a5a30301f823fd14b53dcd8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BirdMovement
@@ -557,6 +587,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RandomChirps
   - hash:
       serializedVersion: 2
       Hash: e6ae40841db498b6e673877ac45ad208
@@ -625,7 +661,13 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: 20eeaeae829475b5e354d1f626c51a2b
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestRunner.Utils
+    className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 4ef0f7d42cdb13479386e1f049c315aa
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
@@ -674,4 +716,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/jkays/git/Asgn2/Output/PC Building for Bird Brains.exe
+  playerPath: C:/Users/Kyle/Desktop/Git Repos/A5/Output/PC Building for Bird Brains.exe
